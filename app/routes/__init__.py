@@ -1,4 +1,4 @@
-from app.routes.auth_routes import auth_routes
+from app.routes.user_routes import user_routes
 
 def register_routes(app):
-    app.register_blueprint(auth_routes, url_prefix='/auth')
+    app.register_blueprint(user_routes, url_prefix='/user')

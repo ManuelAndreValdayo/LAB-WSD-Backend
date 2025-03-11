@@ -1,7 +1,7 @@
 from flask import Flask
 from app.config import Config
 from app.extensions import db, migrate, jwt
-from app.routes import auth_routes
+from app.routes import user_routes
 
 def create_app():
     app = Flask(__name__)
@@ -13,6 +13,6 @@ def create_app():
     jwt.init_app(app)
 
     #Registrar rutas
-    app.register_blueprint(auth_routes, url_prefix='/auth')
+    app.register_blueprint(user_routes, url_prefix='/user')
 
     return app
