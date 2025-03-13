@@ -12,5 +12,4 @@ def login():
 
 @user_routes.route("/register", methods=["POST"])
 def register():
-    print(request.json)
     return register_user(request.json)
