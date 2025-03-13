@@ -14,8 +14,7 @@ def register_user(data):
         user.surnames = data["surnames"]
         user.username = data["username"]
         user.email = data["email"]
-        user.password = bcrypt.hashpw(data["password"].encoded['utf-8'], bcrypt.gensalt())
-
+        user.password = bcrypt.hashpw(data["password"].encode('utf-8'), bcrypt.gensalt())
         return UserDB.fncCreateUser(user)
     # if User.query.filter_by(username=data["username"]).first():
     #     return {"message": "El usuario ya existe"}, 400
